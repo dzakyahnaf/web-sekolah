@@ -1,0 +1,183 @@
+/* ── Hero ── */
+.hero {
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(6,51,41,0.9) 0%, rgba(10,77,60,0.8) 100%);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: var(--space-4xl) 0;
+  animation: fadeInUp 0.6s ease;
+}
+
+.heroSub {
+  display: inline-block;
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
+.heroTitle {
+  color: #fff;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: var(--space-md);
+}
+
+.heroDesc {
+  color: rgba(255,255,255,0.7);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.heroWave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  line-height: 0;
+}
+
+.heroWave svg {
+  width: 100%;
+  height: 60px;
+}
+
+/* ── Visi Card ── */
+.visiSection {
+  position: relative;
+  margin-top: -40px;
+  z-index: 4;
+  padding-bottom: var(--space-2xl);
+}
+
+.visiCard {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  padding: var(--space-3xl);
+  text-align: center;
+  box-shadow: var(--shadow-xl);
+  border: 2px solid var(--color-accent-50);
+  position: relative;
+  animation: scaleIn 0.5s ease 0.2s forwards;
+  opacity: 0;
+}
+
+.quoteIcon {
+  font-size: 4rem;
+  color: var(--color-border);
+  line-height: 1;
+  margin-bottom: var(--space-sm);
+}
+
+.visiTitle {
+  font-size: 1.6rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-lg);
+}
+
+.visiText {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+/* ── Misi Grid ── */
+.misiSection {
+  background: var(--color-bg);
+}
+
+.misiGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+}
+
+.misiCard {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.misiCard:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.misiCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--color-accent), var(--color-primary));
+  border-radius: 0 4px 4px 0;
+}
+
+.misiNum {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--color-primary-50), var(--color-accent-50));
+  color: var(--color-primary);
+  font-weight: 800;
+  font-size: 1.2rem;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-md);
+}
+
+.misiTitle {
+  font-size: 1.15rem;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+}
+
+.misiDesc {
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 40vh;
+  }
+
+  .visiCard {
+    padding: var(--space-xl);
+  }
+
+  .misiGrid {
+    grid-template-columns: 1fr;
+  }
+}

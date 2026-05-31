@@ -1,0 +1,30 @@
+{
+  "hero": {
+    "subtitle": "Profil Sekolah",
+    "title": "Visi, Misi & Tujuan",
+    "description": "Peta jalan kami dalam mendidik generasi Rabbani yang siap menghadapi tantangan era digital."
+  },
+  "visi": "Menjadi Pusat Pendidikan Vokasi Teknologi Terdepan yang Mencetak Generasi Rabbani, Inovatif, dan Berjiwa Technopreneur pada Tahun 2030.",
+  "misi": [
+    {
+      "id": 1,
+      "title": "Pendidikan Agama Terpadu",
+      "description": "Menyelenggarakan pendidikan yang mengintegrasikan ilmu pengetahuan dan teknologi dengan nilai-nilai akidah, akhlak, dan hafalan Al-Qur'an (Tahfidz)."
+    },
+    {
+      "id": 2,
+      "title": "Kurikulum Standar Industri",
+      "description": "Menerapkan pembelajaran vokasi berbasis Project Based Learning (PjBL) yang responsif dan diselaraskan dengan kebutuhan Dunia Usaha & Dunia Industri (DUDI)."
+    },
+    {
+      "id": 3,
+      "title": "Fasilitas & Inovasi",
+      "description": "Menyediakan fasilitas laboratorium dan infrastruktur teknologi terkini untuk menunjang penelitian, eksperimen, dan karya inovatif siswa."
+    },
+    {
+      "id": 4,
+      "title": "Kewirausahaan (Technopreneur)",
+      "description": "Membekali siswa dengan keterampilan kewirausahaan digital dan kemandirian agar mampu menciptakan lapangan pekerjaan di bidang industri kreatif."
+    }
+  ]
+}

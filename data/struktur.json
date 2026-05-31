@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "nama": "H. Ahmad Fauzi, S.Pd., M.Pd.",
+    "jabatan": "Kepala Sekolah",
+    "foto": "",
+    "order": 1
+  },
+  {
+    "id": "2",
+    "nama": "Ustadzah Siti Aminah, S.Kom.",
+    "jabatan": "Wakil Kepala Sekolah Bidang Kurikulum",
+    "foto": "",
+    "order": 2
+  },
+  {
+    "id": "3",
+    "nama": "Ustadz Budi Santoso, S.T.",
+    "jabatan": "Wakil Kepala Sekolah Bidang Kesiswaan",
+    "foto": "",
+    "order": 3
+  },
+  {
+    "id": "4",
+    "nama": "Ir. Dewi Kartika, M.Kom.",
+    "jabatan": "Ketua Program Keahlian RPL",
+    "foto": "",
+    "order": 4
+  },
+  {
+    "id": "5",
+    "nama": "Muhammad Rizki, S.Kom.",
+    "jabatan": "Ketua Program Keahlian TKJ",
+    "foto": "",
+    "order": 5
+  },
+  {
+    "id": "6",
+    "nama": "Fitri Handayani, S.Ds.",
+    "jabatan": "Ketua Program Keahlian DKV",
+    "foto": "",
+    "order": 6
+  }
+]

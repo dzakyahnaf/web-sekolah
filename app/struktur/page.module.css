@@ -1,0 +1,104 @@
+.hero {
+  position: relative; min-height: 40vh;
+  display: flex; align-items: center; overflow: hidden;
+}
+.heroBg { position: absolute; inset: 0; }
+.heroOverlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(6,51,41,0.9) 0%, rgba(10,77,60,0.8) 100%);
+}
+.heroContent {
+  position: relative; z-index: 2; text-align: center;
+  padding: var(--space-4xl) 0;
+}
+.heroSub {
+  color: var(--color-accent); font-weight: 600; font-size: 0.9rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.heroTitle {
+  color: #fff; font-size: clamp(2rem, 4vw, 3rem);
+  margin: var(--space-sm) 0 var(--space-md);
+}
+.heroDesc { color: rgba(255,255,255,0.7); font-size: 1.05rem; }
+
+/* Struktur */
+.strukturSection { background: var(--color-bg); }
+
+.kepalaCard {
+  text-align: center;
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl) var(--space-3xl);
+  box-shadow: var(--shadow-lg);
+  max-width: 400px;
+  margin: 0 auto;
+  border: 2px solid var(--color-accent-50);
+}
+
+.avatar {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto var(--space-lg);
+  background: var(--color-primary-50);
+  display: flex; align-items: center; justify-content: center;
+  border: 3px solid var(--color-accent);
+}
+
+.avatarPlaceholder { font-size: 3rem; }
+
+.kepalaName { font-size: 1.2rem; margin-bottom: 4px; }
+.kepalaRole {
+  font-size: 0.9rem; color: var(--color-accent-dark); font-weight: 600;
+}
+
+.connector {
+  width: 2px; height: 48px;
+  background: var(--color-border);
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-xl);
+  margin-top: 0;
+}
+
+.memberCard {
+  text-align: center;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.memberCard:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.memberAvatar {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto var(--space-md);
+  background: var(--color-primary-50);
+  display: flex; align-items: center; justify-content: center;
+  border: 2px solid var(--color-border);
+}
+
+.memberAvatarPlaceholder { font-size: 2rem; }
+
+.memberName { font-size: 1rem; margin-bottom: 4px; }
+.memberRole { font-size: 0.82rem; color: var(--color-text-muted); font-weight: 500; }
+
+@media (max-width: 768px) {
+  .hero { min-height: 35vh; }
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .grid { grid-template-columns: 1fr; max-width: 300px; margin: 0 auto; }
+}

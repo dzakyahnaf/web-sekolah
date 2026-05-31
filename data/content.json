@@ -1,0 +1,68 @@
+{
+  "schoolName": "Sekolah ITM",
+  "hero": {
+    "greeting": "Assalamu'alaikum Warahmatullahi Wabarakatuh",
+    "description": "Selamat datang di SMK Islam ITM. Kami memadukan kurikulum vokasi berbasis teknologi industri dengan pembinaan karakter Islami dan program Tahfidz Al-Qur'an.",
+    "ctaPrimary": "Daftar Sekarang",
+    "ctaSecondary": "Lihat Jurusan"
+  },
+  "about": {
+    "subtitle": "Tentang Sekolah Kami",
+    "title": "Membangun Karakter & Kompetensi Masa Depan",
+    "description": "SMK Islam ITM tidak hanya fokus pada pencapaian akademik dan keterampilan vokasi, tetapi juga menanamkan adab dan nilai-nilai Islami dalam setiap proses pembelajaran untuk mencetak tenaga profesional yang berakhlakul karimah.",
+    "features": [
+      {
+        "icon": "quran",
+        "title": "Program Tahfidz Unggulan",
+        "description": "Pembiasaan hafalan Al-Qur'an setiap pagi, menargetkan kelulusan dengan minimal hafalan 3 Juz."
+      },
+      {
+        "icon": "facility",
+        "title": "Fasilitas Standar Industri",
+        "description": "Laboratorium komputer canggih, alat praktek modern, dan akses internet kecepatan tinggi."
+      },
+      {
+        "icon": "job",
+        "title": "Jaminan Penyaluran Kerja",
+        "description": "Bekerjasama dengan perusahaan IT terkemuka untuk memastikan lulusan siap kerja atau berwirausaha."
+      }
+    ]
+  },
+  "programs": {
+    "subtitle": "Program Keahlian",
+    "title": "Pilihan Jurusan di ITM",
+    "description": "Kami menawarkan 3 program keahlian unggulan yang dirancang khusus untuk menjawab tantangan dunia industri digital saat ini.",
+    "items": [
+      {
+        "id": "rpl",
+        "badge": "Software Engineering",
+        "title": "Rekayasa Perangkat Lunak",
+        "description": "Mempelajari pembuatan aplikasi berbasis web, desktop, dan mobile. Siswa dicetak menjadi Programmer dan Developer yang handal di industri.",
+        "image": "/images/komputer.jpg"
+      },
+      {
+        "id": "tkj",
+        "badge": "Network Engineering",
+        "title": "Teknik Komputer & Jaringan",
+        "description": "Fokus pada perakitan komputer, instalasi jaringan LAN/WAN, administrasi server cloud, hingga dasar keamanan siber (Cyber Security).",
+        "image": "/images/komputer1.jpg"
+      },
+      {
+        "id": "dkv",
+        "badge": "Creative Design",
+        "title": "Desain Komunikasi Visual",
+        "description": "Mengasah kreativitas dalam desain grafis, ilustrasi, animasi, videografi, dan fotografi digital untuk kebutuhan industri kreatif global.",
+        "image": "/images/dkv.jpg"
+      }
+    ]
+  },
+  "contact": {
+    "address": "Jl. Pendidikan No. 123, Jakarta Selatan",
+    "phone": "021-1234-5678",
+    "mobile": "0812-3456-7890",
+    "email": "info@sekolahitm.sch.id"
+  },
+  "footer": {
+    "tagline": "Mencetak tenaga kerja profesional yang terampil di bidang teknologi dan memiliki akhlakul karimah berlandaskan nilai-nilai Islam."
+  }
+}
