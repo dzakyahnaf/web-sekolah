@@ -108,6 +108,16 @@
   transition: all var(--transition-fast);
 }
 
+.dropdownMenu::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: transparent;
+}
+
 .dropdownOpen {
   opacity: 1;
   visibility: visible;
