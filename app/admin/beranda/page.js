@@ -37,7 +37,11 @@ export default function AdminBeranda() {
         <p className={styles.pageDesc}>Kelola konten halaman beranda website</p>
       </div>
 
-      {msg && <div style={{ padding: '0.7rem 1rem', borderRadius: '8px', background: msg.includes('✅') ? '#ecfdf5' : '#fef2f2', marginBottom: '1.5rem', fontSize: '0.9rem' }}>{msg}</div>}
+      {msg && (
+        <div className={`${styles.toast} ${msg.includes('❌') ? styles.toastError : ''}`}>
+          {msg}
+        </div>
+      )}
 
       {/* Hero Section */}
       <div className={styles.formCard} style={{ marginBottom: '1.5rem' }}>
