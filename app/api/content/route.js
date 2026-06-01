@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
+export const dynamic = 'force-dynamic';
+
 const contentPath = path.join(process.cwd(), 'data', 'content.json');
 const visiPath = path.join(process.cwd(), 'data', 'visi.json');
 

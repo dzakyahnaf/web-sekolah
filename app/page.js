@@ -1,11 +1,23 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './page.module.css';
-import content from '@/data/content.json';
-import blogData from '@/data/blog.json';
 import PublicLayout from '@/components/PublicLayout';
+import fs from 'fs';
+import path from 'path';
+
+export const dynamic = 'force-dynamic';
+
+function getHomeData() {
+  const contentPath = path.join(process.cwd(), 'data', 'content.json');
+  const blogPath = path.join(process.cwd(), 'data', 'blog.json');
+  return {
+    content: JSON.parse(fs.readFileSync(contentPath, 'utf-8')),
+    blogData: JSON.parse(fs.readFileSync(blogPath, 'utf-8')),
+  };
+}
 
 export default function Home() {
+  const { content, blogData } = getHomeData();
   const { hero, about, programs } = content;
   const recentPosts = blogData.filter(p => p.status === 'published').slice(0, 3);
 

@@ -1,14 +1,23 @@
 import Image from 'next/image';
 import styles from './page.module.css';
-import visiData from '@/data/visi.json';
 import PublicLayout from '@/components/PublicLayout';
+import fs from 'fs';
+import path from 'path';
+
+export const dynamic = 'force-dynamic';
 
 export const metadata = {
   title: 'Visi & Misi',
   description: 'Visi, Misi dan Tujuan SMK Islam ITM — Mencetak generasi Rabbani yang inovatif dan berjiwa technopreneur.',
 };
 
+function getVisiData() {
+  const filePath = path.join(process.cwd(), 'data', 'visi.json');
+  return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+}
+
 export default function VisiPage() {
+  const visiData = getVisiData();
   const { hero, visi, misi } = visiData;
 
   return (

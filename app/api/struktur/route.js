@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
+export const dynamic = 'force-dynamic';
+
 const dataPath = path.join(process.cwd(), 'data', 'struktur.json');
 
 function readData() { return JSON.parse(fs.readFileSync(dataPath, 'utf-8')); }

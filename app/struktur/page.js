@@ -1,14 +1,23 @@
 import Image from 'next/image';
 import styles from './page.module.css';
-import strukturData from '@/data/struktur.json';
 import PublicLayout from '@/components/PublicLayout';
+import fs from 'fs';
+import path from 'path';
+
+export const dynamic = 'force-dynamic';
 
 export const metadata = {
   title: 'Struktur Organisasi',
   description: 'Struktur organisasi SMK Islam ITM.',
 };
 
+function getStrukturData() {
+  const filePath = path.join(process.cwd(), 'data', 'struktur.json');
+  return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+}
+
 export default function StrukturPage() {
+  const strukturData = getStrukturData();
   const sorted = [...strukturData].sort((a, b) => a.order - b.order);
   const kepala = sorted[0];
   const rest = sorted.slice(1);

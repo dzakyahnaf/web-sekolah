@@ -1,15 +1,24 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './page.module.css';
-import blogData from '@/data/blog.json';
 import PublicLayout from '@/components/PublicLayout';
+import fs from 'fs';
+import path from 'path';
+
+export const dynamic = 'force-dynamic';
 
 export const metadata = {
   title: 'Blog',
   description: 'Artikel, berita, dan pengumuman terbaru dari SMK Islam ITM.',
 };
 
+function getBlogData() {
+  const filePath = path.join(process.cwd(), 'data', 'blog.json');
+  return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+}
+
 export default function BlogPage() {
+  const blogData = getBlogData();
   const posts = blogData.filter(p => p.status === 'published');
 
   return (

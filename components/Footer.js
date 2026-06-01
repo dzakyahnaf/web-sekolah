@@ -1,7 +1,31 @@
+'use client';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './Footer.module.css';
 
 export default function Footer() {
+  const [schoolName, setSchoolName] = useState('Sekolah ITM');
+  const [tagline, setTagline] = useState('Mencetak tenaga kerja profesional yang terampil di bidang teknologi dan memiliki akhlakul karimah berlandaskan nilai-nilai Islam.');
+  const [contact, setContact] = useState({
+    address: 'Jl. Pendidikan No. 123, Jakarta Selatan',
+    phone: '021-1234-5678',
+    mobile: '0812-3456-7890',
+    email: 'info@sekolahitm.sch.id'
+  });
+
+  useEffect(() => {
+    fetch('/api/content')
+      .then(r => r.json())
+      .then(data => {
+        if (data) {
+          if (data.schoolName) setSchoolName(data.schoolName);
+          if (data.footer?.tagline) setTagline(data.footer.tagline);
+          if (data.contact) setContact(data.contact);
+        }
+      })
+      .catch(() => {});
+  }, []);
+
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
@@ -10,10 +34,10 @@ export default function Footer() {
           <div className={styles.col}>
             <div className={styles.brand}>
               <span className={styles.brandIcon}>🕌</span>
-              <span className={styles.brandText}>Sekolah ITM</span>
+              <span className={styles.brandText}>{schoolName}</span>
             </div>
             <p className={styles.tagline}>
-              Mencetak tenaga kerja profesional yang terampil di bidang teknologi dan memiliki akhlakul karimah berlandaskan nilai-nilai Islam.
+              {tagline}
             </p>
           </div>
 
@@ -37,28 +61,28 @@ export default function Footer() {
                 <span className={styles.contactIcon}>📍</span>
                 <div>
                   <span className={styles.contactLabel}>Alamat</span>
-                  <span className={styles.contactValue}>Jl. Pendidikan No. 123, Jakarta Selatan</span>
+                  <span className={styles.contactValue}>{contact.address}</span>
                 </div>
               </li>
               <li className={styles.contactItem}>
                 <span className={styles.contactIcon}>📞</span>
                 <div>
                   <span className={styles.contactLabel}>Telepon</span>
-                  <a href="tel:02112345678" className={styles.contactValue}>021-1234-5678</a>
+                  <a href={`tel:${contact.phone?.replace(/[^0-9+]/g, '')}`} className={styles.contactValue}>{contact.phone}</a>
                 </div>
               </li>
               <li className={styles.contactItem}>
                 <span className={styles.contactIcon}>📱</span>
                 <div>
                   <span className={styles.contactLabel}>Mobile</span>
-                  <a href="tel:081234567890" className={styles.contactValue}>0812-3456-7890</a>
+                  <a href={`tel:${contact.mobile?.replace(/[^0-9+]/g, '')}`} className={styles.contactValue}>{contact.mobile}</a>
                 </div>
               </li>
               <li className={styles.contactItem}>
                 <span className={styles.contactIcon}>✉️</span>
                 <div>
                   <span className={styles.contactLabel}>Email</span>
-                  <a href="mailto:info@sekolahitm.sch.id" className={styles.contactValue}>info@sekolahitm.sch.id</a>
+                  <a href={`mailto:${contact.email}`} className={styles.contactValue}>{contact.email}</a>
                 </div>
               </li>
             </ul>
@@ -68,7 +92,7 @@ export default function Footer() {
 
       <div className={styles.bottom}>
         <div className={styles.bottomInner}>
-          <p>&copy; {new Date().getFullYear()} SMK Islam ITM. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {schoolName}. All rights reserved.</p>
         </div>
       </div>
     </footer>

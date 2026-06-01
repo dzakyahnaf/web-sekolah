@@ -2,15 +2,20 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import styles from './page.module.css';
-import blogData from '@/data/blog.json';
 import PublicLayout from '@/components/PublicLayout';
+import fs from 'fs';
+import path from 'path';
 
-export async function generateStaticParams() {
-  return blogData.map((post) => ({ slug: post.slug }));
+export const dynamic = 'force-dynamic';
+
+function getBlogData() {
+  const filePath = path.join(process.cwd(), 'data', 'blog.json');
+  return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 }
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
+  const blogData = getBlogData();
   const post = blogData.find(p => p.slug === slug);
   if (!post) return {};
   return {
@@ -21,6 +26,7 @@ export async function generateMetadata({ params }) {
 
 export default async function BlogDetail({ params }) {
   const { slug } = await params;
+  const blogData = getBlogData();
   const post = blogData.find(p => p.slug === slug);
   if (!post) notFound();
 
